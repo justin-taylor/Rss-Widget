@@ -5,5 +5,5 @@
     <string name="app_name">FeedReader</string>
     <string name="widget_title">RSS Reader</string>
     <string name="no_articles">Cannot fetch articles at this time.</string>
-
+    <string name="refresh_button">Refresh</string>
 </resources>

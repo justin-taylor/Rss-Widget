@@ -50,9 +50,10 @@
     <Button
         android:id="@+id/refresh"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="50dp"
         android:textColor="#FFFFFFFF"
-        android:textSize="12dp">
+        android:textSize="24dp"
+        android:text="@string/no_articles">
     </Button>
 
 </LinearLayout>
