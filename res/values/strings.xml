@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, FeedReaderActivity!</string>
+    <string name="app_name">FeedReader</string>
+    <string name="widget_title">RSS Reader</string>
+    <string name="no_articles">Cannot fetch articles at this time.</string>
+
+</resources>
