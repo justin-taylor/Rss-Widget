@@ -1,9 +1,9 @@
-package org.tayloredapps.Widget;
+package org.tayloredapps.RssWidget.Widget;
 
 import org.tayloredapps.R;
-import org.tayloredapps.Activities.FeedReaderActivity;
 import org.tayloredapps.R.id;
 import org.tayloredapps.R.layout;
+import org.tayloredapps.RssWidget.Activities.FeedReaderActivity;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;

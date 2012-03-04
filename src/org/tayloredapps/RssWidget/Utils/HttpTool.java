@@ -1,4 +1,4 @@
-package org.tayloredapps.Utils;
+package org.tayloredapps.RssWidget.Utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;

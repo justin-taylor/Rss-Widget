@@ -1,14 +1,14 @@
-package org.tayloredapps.Widget;
+package org.tayloredapps.RssWidget.Widget;
 
 import java.util.List;
 
 import org.tayloredapps.R;
 import org.tayloredapps.R.id;
 import org.tayloredapps.R.layout;
-import org.tayloredapps.API.FeedAPI;
-import org.tayloredapps.API.OnFetchArticlesListener;
+import org.tayloredapps.RssWidget.API.FeedAPI;
+import org.tayloredapps.RssWidget.API.OnFetchArticlesListener;
+import org.tayloredapps.RssWidget.Models.RssArticle;
 
-import Models.RssArticle;
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;

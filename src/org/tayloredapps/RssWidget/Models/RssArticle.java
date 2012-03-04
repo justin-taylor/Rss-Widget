@@ -1,14 +1,13 @@
-package Models;
+package org.tayloredapps.RssWidget.Models;
 
 
 import java.util.Date;
 import java.util.List;
 
-import org.tayloredapps.RssWidgetApplication;
+import org.tayloredapps.RssWidget.RssWidgetApplication;
 
 import com.orm.androrm.CharField;
 import com.orm.androrm.DateField;
-import com.orm.androrm.Filter;
 import com.orm.androrm.ForeignKeyField;
 import com.orm.androrm.IntegerField;
 import com.orm.androrm.Model;

@@ -1,8 +1,8 @@
-package Models;
+package org.tayloredapps.RssWidget.Models;
 
 import java.util.List;
 
-import org.tayloredapps.RssWidgetApplication;
+import org.tayloredapps.RssWidget.RssWidgetApplication;
 
 import com.orm.androrm.CharField;
 import com.orm.androrm.IntegerField;

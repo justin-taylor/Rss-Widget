@@ -1,12 +1,13 @@
-package org.tayloredapps;
+package org.tayloredapps.RssWidget;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.tayloredapps.RssWidget.Models.*;
+
 import com.orm.androrm.DatabaseAdapter;
 import com.orm.androrm.Model;
 
-import Models.*;
 
 import android.app.Application;
 

@@ -1,17 +1,17 @@
-package org.tayloredapps.API;
+package org.tayloredapps.RssWidget.API;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.tayloredapps.RssWidgetApplication;
-import org.tayloredapps.Utils.HttpTool;
+import org.tayloredapps.RssWidget.RssWidgetApplication;
+import org.tayloredapps.RssWidget.Models.RssArticle;
+import org.tayloredapps.RssWidget.Models.RssFeed;
+import org.tayloredapps.RssWidget.Utils.HttpTool;
 
 import com.orm.androrm.Filter;
 
-import Models.RssArticle;
-import Models.RssFeed;
 import android.os.AsyncTask;
 import android.os.Looper;
 import android.util.Log;
@@ -20,7 +20,7 @@ public class FeedAPI
 {
 
 	// SERVER METHODS AND URLS
-	private static final String SERVER = "http://mobile.tayloredapps.org:9876";
+	private static final String SERVER = "http://mobile.tayloredapps.org";
 	private static final String GET_ARTICLES = SERVER+"/get/articles";
 	private static final String PUT_FEED 	= SERVER+"/put/feed";
 	

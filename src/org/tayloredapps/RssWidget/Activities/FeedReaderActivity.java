@@ -1,4 +1,4 @@
-package org.tayloredapps.Activities;
+package org.tayloredapps.RssWidget.Activities;
 
 import org.tayloredapps.R;
 import org.tayloredapps.R.layout;

@@ -1,4 +1,4 @@
-package org.tayloredapps.API;
+package org.tayloredapps.RssWidget.API;
 
 public interface OnFetchArticlesListener
 {
