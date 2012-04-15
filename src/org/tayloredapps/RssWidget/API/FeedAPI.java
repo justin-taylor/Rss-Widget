@@ -20,7 +20,7 @@ public class FeedAPI
 {
 
 	// SERVER METHODS AND URLS
-	private static final String SERVER = "http://mobile.tayloredapps.org";
+	private static final String SERVER = "107.20.88.55";
 	private static final String GET_ARTICLES = SERVER+"/get/articles";
 	private static final String PUT_FEED 	= SERVER+"/put/feed";
 	
@@ -80,7 +80,7 @@ public class FeedAPI
 			try
 			{
 				String body = HttpTool.request(GET_ARTICLES);
-								
+				Log.e("GOT ARTICLES","boyd: "+body);
 				JSONObject root = new JSONObject(body);
 				
 				//parse the feeds first
