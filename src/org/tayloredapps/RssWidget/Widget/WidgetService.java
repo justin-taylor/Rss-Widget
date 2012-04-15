@@ -60,7 +60,6 @@ class RssRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, On
 	
 	public RemoteViews getViewAt(int position)
 	{
-		// TODO implement with actual data
 		RemoteViews rv = new RemoteViews(mContext.getPackageName(), R.layout.widget_article_row);
 		
 		RssArticle article = articles.get(position);

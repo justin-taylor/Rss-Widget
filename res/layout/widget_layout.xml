@@ -53,7 +53,7 @@
         android:layout_height="50dp"
         android:textColor="#FFFFFFFF"
         android:textSize="24dp"
-        android:text="@string/no_articles">
+        android:text="@string/refresh_button">
     </Button>
 
 </LinearLayout>
