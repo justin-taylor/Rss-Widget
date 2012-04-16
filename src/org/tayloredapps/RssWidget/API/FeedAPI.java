@@ -20,7 +20,7 @@ public class FeedAPI
 {
 
 	// SERVER METHODS AND URLS
-	private static final String SERVER = "107.20.88.55";
+	private static final String SERVER = "http://107.20.88.55";
 	private static final String GET_ARTICLES = SERVER+"/get/articles";
 	private static final String PUT_FEED 	= SERVER+"/put/feed";
 	
