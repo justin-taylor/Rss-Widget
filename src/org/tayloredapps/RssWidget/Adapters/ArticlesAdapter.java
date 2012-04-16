@@ -1,5 +1,6 @@
 package org.tayloredapps.RssWidget.Adapters;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.tayloredapps.R;
@@ -16,10 +17,10 @@ public class ArticlesAdapter extends ArrayAdapter<RssArticle>
 {
 	List<RssArticle> articles;
 	
-	public ArticlesAdapter(Context context, int textViewResourceId)
+	public ArticlesAdapter(Context context, int textViewResourceId, int feedId)
 	{
 		super(context, textViewResourceId);
-		articles = RssArticle.getAllArticles();
+		articles = RssArticle.getArticlesForFeed(feedId);
 	}
 	
 	public int getCount()
@@ -37,13 +38,19 @@ public class ArticlesAdapter extends ArrayAdapter<RssArticle>
 		if (convertView == null)
 		{	
 			LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			convertView = inflater.inflate(R.layout.widget_article_row, parent, false);
+			convertView = inflater.inflate(R.layout.article_row, parent, false);
 		}
 
 		RssArticle item = articles.get(position);
 		
 		TextView textView = (TextView) convertView.findViewById(R.id.title);
 		textView.setText(item.getTitle());
+		
+		SimpleDateFormat dateFormat=new SimpleDateFormat("M/dd/20yy");
+		String dateString = dateFormat.format(item.getDate());
+		
+		textView = (TextView) convertView.findViewById(R.id.date);
+		textView.setText(dateString);
 		
 		textView = (TextView) convertView.findViewById(R.id.summary);
 		textView.setText(item.getSummary());

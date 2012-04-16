@@ -8,6 +8,7 @@ import org.tayloredapps.RssWidget.RssWidgetApplication;
 
 import com.orm.androrm.CharField;
 import com.orm.androrm.DateField;
+import com.orm.androrm.Filter;
 import com.orm.androrm.ForeignKeyField;
 import com.orm.androrm.IntegerField;
 import com.orm.androrm.Model;
@@ -66,7 +67,7 @@ public class RssArticle extends Model
 	
 	/**
 	 * Takes a date string in the format of
-	 * YYY-MM-DD HH:MM:SS
+	 * YYYY-MM-DD HH:MM:SS
 	 * and sets the date
 	 * 
 	 * @param String
@@ -81,6 +82,7 @@ public class RssArticle extends Model
 		newDate.setYear(Integer.parseInt( dateSplit[0] ));
 		newDate.setMonth(Integer.parseInt( dateSplit[1] ));
 		newDate.setDate( Integer.parseInt( dateSplit[2] ));
+		
 		newDate.setHours(Integer.parseInt( time[0] ));
 		newDate.setMinutes(Integer.parseInt( time[1] ));
 		newDate.setSeconds(Integer.parseInt( time[2] ));
@@ -122,6 +124,15 @@ public class RssArticle extends Model
 	public void save()
 	{
 		this.save(RssWidgetApplication.appContext, getId());
+	}
+	
+	public static List<RssArticle> getArticlesForFeed(int feedId)
+	{
+		Filter filter = new Filter();
+		filter.is("feed__id", feedId);
+		
+		return RssArticle.objects(RssWidgetApplication.appContext, RssArticle.class)
+				.filter(filter).orderBy("-date").toList();
 	}
 	
 	public static RssArticle getArticleById(int id)

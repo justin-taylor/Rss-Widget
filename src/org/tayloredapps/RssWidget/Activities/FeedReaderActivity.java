@@ -33,7 +33,7 @@ public class FeedReaderActivity extends Activity {
 		{
 			int itemId = adapter.getItem(position).getId();
 			Intent intent = new Intent(FeedReaderActivity.this, ArticleListActivity.class);
-			intent.putExtra("itemId", itemId);
+			intent.putExtra(ArticleListActivity.FEED_ID_EXTRA, itemId);
 			startActivity(intent);
 		}
     };

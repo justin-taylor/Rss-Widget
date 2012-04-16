@@ -5,8 +5,6 @@ import java.util.List;
 import org.tayloredapps.R;
 import org.tayloredapps.RssWidget.Models.RssFeed;
 
-import com.orm.androrm.Model;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

@@ -80,7 +80,6 @@ public class FeedAPI
 			try
 			{
 				String body = HttpTool.request(GET_ARTICLES);
-				Log.e("GOT ARTICLES","boyd: "+body);
 				JSONObject root = new JSONObject(body);
 				
 				//parse the feeds first
