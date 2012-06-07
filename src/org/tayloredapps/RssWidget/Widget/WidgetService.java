@@ -60,12 +60,14 @@ class RssRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, On
 	
 	public RemoteViews getViewAt(int position)
 	{
+		Log.e("GETTING NEW VIEW", "NEW VIEW");
 		RemoteViews rv = new RemoteViews(mContext.getPackageName(), R.layout.widget_article_row);
 		
 		RssArticle article = articles.get(position);
 		
 		rv.setTextViewText(R.id.title, article.getTitle());
 		
+		/*
 		String summary;
 		int maxLength = 100;
 		if(article.getSummary().length() > maxLength)
@@ -79,7 +81,13 @@ class RssRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, On
 		}
 		
 		rv.setTextViewText(R.id.summary, summary);
+		*/
 		
+		if(article.getFeed() != null)
+		{
+			rv.setTextViewText(R.id.feed_name, article.getFeed().getTitle());
+		}
+				
 		Bundle extras = new Bundle();
 		extras.putString(WidgetProvider.OPEN_ARTICLE_URL_EXTRA, article.getLink());
 		Intent intent = new Intent();
@@ -148,10 +156,18 @@ class RssRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, On
 	
 	public void fetchArticlesDidSucceed()
 	{
-		//TODO refresh the list
+		//TODO
 		articles = RssArticle.getAllArticles();
-		this.onDataSetChanged();
+		//this.onDataSetChanged();
 		blockApiCall = false;
+		Runnable notifyRunnable = new Runnable()
+		{
+			public void run()
+			{
+				AppWidgetManager.getInstance(mContext).notifyAll();
+			}
+		};
+		//threadHandler.post(notifyRunnable);
 	}
 
 }

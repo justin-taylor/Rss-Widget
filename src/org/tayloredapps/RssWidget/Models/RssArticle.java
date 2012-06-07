@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.tayloredapps.RssWidget.RssWidgetApplication;
 
+import android.util.Log;
+
 import com.orm.androrm.CharField;
 import com.orm.androrm.DateField;
 import com.orm.androrm.Filter;
@@ -117,6 +119,10 @@ public class RssArticle extends Model
 	
 	public RssFeed getFeed()
 	{
+		if(this.feed.get() == null)
+		{
+			this.setFeed(this.feed.get(RssWidgetApplication.appContext));
+		}
 		return feed.get();	
 	}
 	
@@ -131,18 +137,27 @@ public class RssArticle extends Model
 		Filter filter = new Filter();
 		filter.is("feed__id", feedId);
 		
-		return RssArticle.objects(RssWidgetApplication.appContext, RssArticle.class)
-				.filter(filter).orderBy("-date").toList();
+		return RssArticle.objects().filter(filter).orderBy("-date").toList();
 	}
 	
 	public static RssArticle getArticleById(int id)
 	{
-		return RssArticle.objects(RssWidgetApplication.appContext, RssArticle.class).get(id);
+		return RssArticle.objects().get(id);
 	}
 	
 	public static List<RssArticle> getAllArticles()
 	{		
-		QuerySet<RssArticle> set = RssArticle.objects(RssWidgetApplication.appContext, RssArticle.class).all().orderBy("-date");
+		QuerySet<RssArticle> set = RssArticle.all().orderBy("-date");
 		return set.toList();
+	}
+	
+	public static QuerySet<RssArticle> all()
+	{
+		return RssArticle.objects().all();
+	}
+	
+	public static QuerySet<RssArticle> objects()
+	{
+		return RssArticle.objects(RssWidgetApplication.appContext, RssArticle.class);
 	}
 }

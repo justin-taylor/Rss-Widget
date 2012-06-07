@@ -33,6 +33,8 @@
         android:id="@+id/article_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:divider="#aaa"
+        android:dividerHeight="1dp"
         android:layout_weight="1">
     </ListView>
     

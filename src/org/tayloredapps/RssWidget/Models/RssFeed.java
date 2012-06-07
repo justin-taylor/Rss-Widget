@@ -71,7 +71,17 @@ public class RssFeed extends Model
 	
 	public static List<RssFeed> getAllFeeds()
 	{
-		QuerySet<RssFeed> set = RssFeed.objects(RssWidgetApplication.appContext, RssFeed.class).all();
+		QuerySet<RssFeed> set = RssFeed.all();
 		return set.toList();
+	}
+	
+	public static QuerySet<RssFeed> objects()
+	{
+		return RssFeed.objects(RssWidgetApplication.appContext, RssFeed.class);
+	}
+	
+	public static QuerySet<RssFeed> all()
+	{
+		return RssFeed.objects().all();
 	}
 }
