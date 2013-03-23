@@ -57,10 +57,10 @@ class RssRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, On
 	{
 		return articles.size();
 	}
+
 	
 	public RemoteViews getViewAt(int position)
 	{
-		Log.e("GETTING NEW VIEW", "NEW VIEW");
 		RemoteViews rv = new RemoteViews(mContext.getPackageName(), R.layout.widget_article_row);
 		
 		RssArticle article = articles.get(position);
@@ -134,7 +134,7 @@ class RssRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, On
 
 	public int getViewTypeCount()
 	{
-		return 0;
+		return 1;
 	}
 
 	public boolean hasStableIds()

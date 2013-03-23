@@ -32,6 +32,11 @@ public class ArticlesAdapter extends ArrayAdapter<RssArticle>
 	{
 		return articles.get(position);
 	}
+
+	public int getViewTypeCount()
+	{
+		return 1;
+	}
 	
 	public View getView(int position, View convertView, ViewGroup parent)
 	{
