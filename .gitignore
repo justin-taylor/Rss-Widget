@@ -1,3 +1,5 @@
 bin/*
 gen/*
 *.class
+.syntastic_javac_config
+.tags

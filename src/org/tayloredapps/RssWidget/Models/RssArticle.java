@@ -6,8 +6,6 @@ import java.util.List;
 
 import org.tayloredapps.RssWidget.RssWidgetApplication;
 
-import android.util.Log;
-
 import com.orm.androrm.CharField;
 import com.orm.androrm.DateField;
 import com.orm.androrm.Filter;

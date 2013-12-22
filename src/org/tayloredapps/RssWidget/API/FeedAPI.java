@@ -11,13 +11,12 @@ import org.tayloredapps.RssWidget.Models.RssFeed;
 import org.tayloredapps.RssWidget.Utils.HttpTool;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 public class FeedAPI
 {
 
 	// SERVER METHODS AND URLS
-	private static final String SERVER = "http://central.tayloredapps.org";
+	private static final String SERVER = "http://tayloredapps.org";
 	private static final String GET_ARTICLES = SERVER+"/get/articles";
 	private static final String PUT_FEED 	= SERVER+"/put/feed";
 	
@@ -180,7 +179,6 @@ public class FeedAPI
 			
 			catch (Exception e)
 			{
-				Log.e("FetchArticlesTask", ""+e.getLocalizedMessage());
 				retVal = e.getLocalizedMessage();
 			}
 			
@@ -208,7 +206,6 @@ public class FeedAPI
 		{
 			for(OnFetchArticlesListener listener : articleListeners)
 			{
-				Log.e("CALLING", "DID SUCCEED");
 				listener.fetchArticlesDidSucceed();
 			}
 		}
